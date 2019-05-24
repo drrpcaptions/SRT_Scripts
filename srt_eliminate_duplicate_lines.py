@@ -31,6 +31,7 @@ def removeDuplicatedLines(input_file,output_file):
 
         # get the current text
         this_sub = sub.text
+        print(this_sub)
 
         # compare with previous text
         repeated_text = difflib.SequenceMatcher(None, prev_sub, this_sub)
@@ -39,6 +40,9 @@ def removeDuplicatedLines(input_file,output_file):
         match_text = repeated_text.a[i:i+k] # text is extracted from  object
         # create a create text by deleteing the matching string
         clean_sub = this_sub.replace(match_text,'')
+        # erase the new line the is left over from the previous command
+        clean_sub = clean_sub[1:]
+        print(clean_sub)
         # save clean text to srt object
         sub.text = clean_sub
 
@@ -87,3 +91,5 @@ if __name__ == '__main__':
     args[1]: input srt subtitles file
     args[2]: output txt file
   """
+
+
