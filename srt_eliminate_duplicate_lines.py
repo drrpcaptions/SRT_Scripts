@@ -31,7 +31,6 @@ def removeDuplicatedLines(input_file,output_file):
 
         # get the current text
         this_sub = sub.text
-        print(this_sub)
 
         # compare with previous text
         repeated_text = difflib.SequenceMatcher(None, prev_sub, this_sub)
@@ -42,7 +41,6 @@ def removeDuplicatedLines(input_file,output_file):
         clean_sub = this_sub.replace(match_text,'')
         # erase the new line the is left over from the previous command
         clean_sub = clean_sub[1:]
-        print(clean_sub)
         # save clean text to srt object
         sub.text = clean_sub
 
