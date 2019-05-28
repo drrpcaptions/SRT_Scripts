@@ -39,8 +39,9 @@ def removeDuplicatedLines(input_file,output_file):
         match_text = repeated_text.a[i:i+k] # text is extracted from  object
         # create a create text by deleteing the matching string
         clean_sub = this_sub.replace(match_text,'')
-        # erase the new line the is left over from the previous command
-        clean_sub = clean_sub[1:]
+        #strip the new lines
+        clean_sub = clean_sub.strip()
+
         # save clean text to srt object
         sub.text = clean_sub
 
