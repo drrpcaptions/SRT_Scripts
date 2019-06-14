@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 '''
 Created on May 22, 2019
-Updated on May 22, 2019
+Updated on June 10, 2019
 
 @author: pablojaku@gmail.com
 
@@ -12,6 +12,7 @@ Python 3.6
 # Libraries to import
 import sys
 import os
+import pysrt
 
 
 # Main program
@@ -32,11 +33,14 @@ def main(args):
     input_file = args[1]
     output_file = args[2]
 
-    with open(input_file) as f:
-        lines = f.readlines()
+    # open the SRT file into object
+    subs = pysrt.open(input_file)
+
+    
     with open(output_file, 'w') as f:
-        for line in lines:
-            f.write(line)
+        for sub in subs:
+            print(sub.text)
+            f.write(sub.text + "\n")
 
 
 # Program initiation point
