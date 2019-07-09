@@ -39,6 +39,6 @@ the script can be found at [srt_rev_stats.py](https://github.com/drrpcaptions/SR
 This script has some additional programing to ensure the optimal processing for REV generated (curated) SRT Files
 - removes the following characters individually:
   - ♪
-  - -
+  - "-"
   - ? (not working at the moment)
   - !
